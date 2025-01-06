@@ -21,7 +21,7 @@ def handle_commands(bot: Bot, dispatcher: Dispatcher):
         if message.from_user.username in admins[0]:
             client_sqlite3.update_admin(message.from_user.username, message.chat.id)
             await bot.send_message(message.chat.id, hello_admin, reply_markup=return_admin_keyboard())
-        # else:
+        else:
             await state.set_state(States.get_bio)
             await bot.send_message(message.chat.id, hello_message)
 
