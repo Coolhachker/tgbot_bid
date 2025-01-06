@@ -1,5 +1,6 @@
-from sqlite3 import Cursor, connect, IntegrityError
+from sqlite3 import connect, IntegrityError
 import random
+
 
 def generate_random_letters(n):
     letters = []
@@ -26,7 +27,7 @@ class SQLite3Client:
 
         self.cursor.execute("""SELECT * FROM admins""")
         if len(self.cursor.fetchall()) == 0:
-            self.cursor.execute("""INSERT INTO admins(username) VALUES (?)""", ('CHT_VENDETTA', ))
+            self.cursor.execute("""INSERT INTO admins(username) VALUES (?)""", ('Fantomq0', ))
             self.connection.commit()
 
         self.cursor.execute("""SELECT * FROM url_of_chat""")
